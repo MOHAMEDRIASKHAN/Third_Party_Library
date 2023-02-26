@@ -1,12 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-//Console.WriteLine("Hello, World!");
+
 namespace ThirdPartyLibrary
 {
     class program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Third Party Library");
+            var people = new List<Person>
+{
+    new Person { Name = "Riyas", Email = "Riyas@example.com", PhoneNumber = "1234567890" },
+    new Person { Name = "Prince", Email = "Prince@example.com", PhoneNumber = "9876543210" }
+};
+
+var filePath = "address_book.csv";
+AddressBook.WriteCsv(people, filePath);
+var peopleFromFile = AddressBook.ReadCsv(filePath);
         }
     }
 }
